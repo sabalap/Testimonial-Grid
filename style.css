@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  padding: 10px;
+  background-color: white;
+}
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  background-color: hsl(210, 46%, 95%);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "purple purple grey kira"
+    "jeanette dark dark kira"
+    "footer footer footer footer";
+  grid-gap: 20px;
+  padding: 50px;
+}
+.wrapper div {
+  color: white;
+  border-radius: 10px;
+  padding: 1.6rem 1rem;
+}
+.header {
+  display: grid;
+  grid-template-columns: 70px 200px;
+  grid-template-areas:
+    "img h1"
+    "img h3";
+  padding: 0;
+}
+.wrapper div img {
+  border-radius: 50%;
+  grid-area: img;
+}
+.wrapper div h3 {
+  opacity: 50%;
+}
+.wrapper div p {
+  opacity: 70%;
+  line-height: 23px;
+}
+.purple {
+  background-color: hsl(263, 55%, 52%);
+  grid-area: purple;
+}
+.grey {
+  background-color: hsl(217, 19%, 35%);
+  grid-area: grey;
+}
+.kira,
+.jeanette {
+  background-color: white;
+  color: hsl(217, 19%, 35%) !important;
+}
+.kira {
+  grid-area: kira;
+}
+.kira h1,
+.kira h3,
+.jeanette h1,
+.jeanette h3 {
+  color: hsl(217, 19%, 35%) !important;
+}
+.dark {
+  background-color: hsl(219, 29%, 14%);
+  grid-area: dark;
+}
+.wrapper h2 {
+  margin-bottom: 30px;
+}
+.kira h2 {
+  margin-top: 50px;
+}
+.kira p {
+  margin-top: 50px;
+}
+footer {
+  margin-top: 40px;
+  grid-area: footer;
+  text-align: center;
+}
+@media (max-width: 1220px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "purple"
+      "grey"
+      "jeanette"
+      "dark"
+      "kira"
+      "footer";
+  }
+  .jeanette {
+    grid-area: jeanette;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+    padding: 0;
+  }
+  .wrapper {
+    padding: 5px;
+  }
+  .header {
+    grid-template-columns: 70px 150px;
+  }
+}
